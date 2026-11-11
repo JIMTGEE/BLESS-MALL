@@ -1,0 +1,121 @@
+[03-May-2026 15:38:36 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 921
+[03-May-2026 15:38:36 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 927
+[03-May-2026 15:38:36 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 933
+[03-May-2026 15:38:36 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 939
+[03-May-2026 15:38:36 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 945
+[03-May-2026 17:31:28 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 921
+[03-May-2026 17:31:28 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 927
+[03-May-2026 17:31:28 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 933
+[03-May-2026 17:31:28 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 939
+[03-May-2026 17:31:28 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/inventory.php on line 945
+[03-May-2026 18:36:42 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1029
+[03-May-2026 18:36:42 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1049
+[03-May-2026 18:36:42 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1059
+[03-May-2026 18:36:42 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1069
+[03-May-2026 18:46:31 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1029
+[03-May-2026 18:46:31 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1049
+[03-May-2026 18:46:31 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1059
+[03-May-2026 18:46:31 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1069
+[03-May-2026 18:50:34 Africa/Accra] PHP Fatal error:  Uncaught mysqli_sql_exception: execute command denied to user 'blessmal_wise'@'localhost' for routine 'o.YEAR' in /home/blessmal/public_html/admin/reports.php:209
+Stack trace:
+#0 /home/blessmal/public_html/admin/reports.php(209): mysqli->query()
+#1 {main}
+  thrown in /home/blessmal/public_html/admin/reports.php on line 209
+[03-May-2026 18:50:39 Africa/Accra] PHP Fatal error:  Uncaught mysqli_sql_exception: execute command denied to user 'blessmal_wise'@'localhost' for routine 'o.DATE' in /home/blessmal/public_html/admin/reports.php:209
+Stack trace:
+#0 /home/blessmal/public_html/admin/reports.php(209): mysqli->query()
+#1 {main}
+  thrown in /home/blessmal/public_html/admin/reports.php on line 209
+[03-May-2026 21:07:59 Africa/Accra] PHP Warning:  ltrim(): Invalid '..'-range, no character to the left of '..' in /home/blessmal/public_html/admin/products.php on line 1585
+[04-May-2026 21:10:09 Africa/Accra] PHP Warning:  ltrim(): Invalid '..'-range, no character to the left of '..' in /home/blessmal/public_html/admin/products.php on line 1585
+[13-May-2026 13:24:30 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[13-May-2026 13:24:44 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[13-May-2026 13:25:27 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[13-May-2026 13:25:27 Africa/Accra] PHP Warning:  Undefined array key "payment_status" in /home/blessmal/public_html/admin/orders.php on line 74
+[13-May-2026 13:25:47 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[13-May-2026 13:25:47 Africa/Accra] PHP Warning:  Undefined array key "payment_status" in /home/blessmal/public_html/admin/orders.php on line 74
+[19-May-2026 09:25:03 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[25-May-2026 14:29:30 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[25-May-2026 14:29:34 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[25-May-2026 14:29:40 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 46
+[25-May-2026 14:29:40 Africa/Accra] PHP Warning:  Undefined array key "payment_status" in /home/blessmal/public_html/admin/orders.php on line 74
+[25-May-2026 14:38:35 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 29
+[25-May-2026 14:53:35 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 98
+[25-May-2026 14:53:47 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 98
+[25-May-2026 15:00:40 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 206
+[25-May-2026 15:08:27 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 227
+[01-Jun-2026 13:54:25 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1029
+[01-Jun-2026 13:54:25 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1049
+[01-Jun-2026 13:54:25 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1059
+[01-Jun-2026 13:54:25 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1069
+[01-Jun-2026 14:10:45 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/orders.php on line 227
+[01-Jun-2026 14:11:43 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1029
+[01-Jun-2026 14:11:43 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1049
+[01-Jun-2026 14:11:43 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1059
+[01-Jun-2026 14:11:43 Africa/Accra] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/blessmal/public_html/admin/reviews.php on line 1069
+[01-Jun-2026 14:39:36 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 51
+[01-Jun-2026 14:39:38 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 51
+[01-Jun-2026 14:39:38 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 51
+[01-Jun-2026 14:53:49 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/delivery.php:299) in /home/blessmal/public_html/admin/header.php on line 26
+[01-Jun-2026 14:57:39 Africa/Accra] PHP Fatal error:  Uncaught Error: Call to undefined method Auth::getCurrentUserId() in /home/blessmal/public_html/admin/users.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/blessmal/public_html/admin/users.php on line 19
+[01-Jun-2026 14:59:26 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 50
+[13-Jun-2026 09:38:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/blessmal/public_html/includes/config.php:33
+Stack trace:
+#0 /home/blessmal/public_html/includes/config.php(33): mysqli->__construct()
+#1 /home/blessmal/public_html/admin/orders.php(10): require_once('/home/blessmal/...')
+#2 {main}
+  thrown in /home/blessmal/public_html/includes/config.php on line 33
+[13-Jun-2026 09:38:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/blessmal/public_html/includes/config.php:33
+Stack trace:
+#0 /home/blessmal/public_html/includes/config.php(33): mysqli->__construct()
+#1 /home/blessmal/public_html/admin/orders.php(10): require_once('/home/blessmal/...')
+#2 {main}
+  thrown in /home/blessmal/public_html/includes/config.php on line 33
+[24-Jun-2026 12:19:19 Africa/Accra] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/blessmal/public_html/includes/auth.php:84
+Stack trace:
+#0 /home/blessmal/public_html/includes/auth.php(84): PDO->__construct()
+#1 /home/blessmal/public_html/includes/auth.php(166): getAuthPDO()
+#2 /home/blessmal/public_html/includes/auth.php(692): RateLimiter::cleanOldAttempts()
+#3 /home/blessmal/public_html/admin/reviews.php(14): require_once('/home/blessmal/...')
+#4 {main}
+  thrown in /home/blessmal/public_html/includes/auth.php on line 84
+[24-Jun-2026 12:19:19 Africa/Accra] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/blessmal/public_html/includes/auth.php:84
+Stack trace:
+#0 /home/blessmal/public_html/includes/auth.php(84): PDO->__construct()
+#1 /home/blessmal/public_html/includes/auth.php(166): getAuthPDO()
+#2 /home/blessmal/public_html/includes/auth.php(692): RateLimiter::cleanOldAttempts()
+#3 /home/blessmal/public_html/admin/users.php(28): require_once('/home/blessmal/...')
+#4 {main}
+  thrown in /home/blessmal/public_html/includes/auth.php on line 84
+[29-Jun-2026 15:21:32 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2255
+[29-Jun-2026 15:22:11 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2255
+[29-Jun-2026 15:22:48 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2255
+[29-Jun-2026 15:22:51 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2255
+[29-Jun-2026 16:26:35 UTC] PHP Warning:  require_once(/home/blessmal/public_html/admin/includes/config.php): Failed to open stream: No such file or directory in /home/blessmal/public_html/admin/products.php on line 9
+[29-Jun-2026 16:26:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/blessmal/public_html/admin/includes/config.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/blessmal/public_html/admin/products.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/blessmal/public_html/admin/products.php on line 9
+[29-Jun-2026 16:26:38 UTC] PHP Warning:  require_once(/home/blessmal/public_html/admin/includes/config.php): Failed to open stream: No such file or directory in /home/blessmal/public_html/admin/products.php on line 9
+[29-Jun-2026 16:26:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/blessmal/public_html/admin/includes/config.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/blessmal/public_html/admin/products.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/blessmal/public_html/admin/products.php on line 9
+[04-Jul-2026 02:53:07 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 53
+[04-Jul-2026 02:53:09 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 53
+[04-Jul-2026 02:58:42 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 50
+[04-Jul-2026 02:58:59 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 50
+[04-Jul-2026 02:59:33 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 50
+[04-Jul-2026 03:00:14 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 50
+[04-Jul-2026 03:12:30 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 70
+[04-Jul-2026 03:13:01 Africa/Accra] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blessmal/public_html/admin/header.php:77) in /home/blessmal/public_html/admin/users.php on line 70
+[06-Jul-2026 03:39:58 Africa/Accra] Settings save error: Incorrect string value: '\xE2\x82\xB5' for column `blessmal_db`.`settings`.`setting_value` at row 1
+[06-Jul-2026 03:40:23 Africa/Accra] Settings save error: Incorrect string value: '\xE2\x82\xB5' for column `blessmal_db`.`settings`.`setting_value` at row 1
+[06-Jul-2026 15:19:47 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2250
+[06-Jul-2026 15:21:51 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2250
+[24-Aug-2026 00:44:15 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2250
+[24-Aug-2026 00:44:21 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2250
+[24-Aug-2026 01:32:26 Africa/Accra] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/blessmal/public_html/admin/products.php on line 2456

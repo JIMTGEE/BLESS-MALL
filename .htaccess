@@ -1,0 +1,5 @@
+Options -Indexes
+
+<FilesMatch "^(error_log|\.env.*|.*\.(log|sql|bak|backup|old|orig|swp))$">
+    Require all denied
+</FilesMatch>

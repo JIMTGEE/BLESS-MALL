@@ -1,0 +1,12 @@
+[16-Sep-2026 15:02:24 Africa/Accra] PHP Fatal error:  Uncaught Error: Class "CSRFToken" not found in /home/blessmal/public_html/delivery/index.php:1069
+Stack trace:
+#0 {main}
+  thrown in /home/blessmal/public_html/delivery/index.php on line 1069
+[16-Sep-2026 15:02:38 Africa/Accra] PHP Fatal error:  Uncaught Error: Class "CSRFToken" not found in /home/blessmal/public_html/delivery/index.php:1069
+Stack trace:
+#0 {main}
+  thrown in /home/blessmal/public_html/delivery/index.php on line 1069
+[16-Sep-2026 15:02:39 Africa/Accra] PHP Fatal error:  Uncaught Error: Class "CSRFToken" not found in /home/blessmal/public_html/delivery/index.php:1069
+Stack trace:
+#0 {main}
+  thrown in /home/blessmal/public_html/delivery/index.php on line 1069

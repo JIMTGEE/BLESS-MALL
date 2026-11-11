@@ -1,0 +1,349 @@
+localhost:3306/blessmal_db/t/		https://cpanel.blessmallgh.com/cpsess4265983023/3rdparty/phpMyAdmin/index.php?route=/database/sql&db=blessmal_db
+
+   Showing rows 0 - 232 (233 total, Query took 0.2648 seconds.) [TABLE_NAME: ADDRESSES... - WISHLIST...]
+
+
+SELECT 
+    t.TABLE_NAME, 
+    c.COLUMN_NAME, 
+    c.DATA_TYPE,
+    c.COLUMN_TYPE,
+    c.IS_NULLABLE,
+    c.COLUMN_DEFAULT,
+    c.CHARACTER_MAXIMUM_LENGTH,
+    k.CONSTRAINT_TYPE
+FROM 
+    INFORMATION_SCHEMA.COLUMNS c
+JOIN 
+    INFORMATION_SCHEMA.TABLES t
+ON 
+    c.TABLE_NAME = t.TABLE_NAME
+LEFT JOIN 
+    INFORMATION_SCHEMA.KEY_COLUMN_USAGE ku 
+ON 
+    c.TABLE_NAME = ku.TABLE_NAME AND c.COLUMN_NAME = ku.COLUMN_NAME
+LEFT JOIN 
+    INFORMATION_SCHEMA.TABLE_CONSTRAINTS k
+ON 
+    ku.TABLE_NAME = k.TABLE_NAME AND ku.CONSTRAINT_NAME = k.CONSTRAINT_NAME
+WHERE 
+    t.TABLE_SCHEMA = 'blessmal_db'
+ORDER BY 
+    t.TABLE_NAME, c.ORDINAL_POSITION;
+
+
+TABLE_NAME   	COLUMN_NAME	DATA_TYPE	COLUMN_TYPE	IS_NULLABLE	COLUMN_DEFAULT	CHARACTER_MAXIMUM_LENGTH	CONSTRAINT_TYPE	
+addresses	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+addresses	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+addresses	address_line1	mediumtext	mediumtext	NO	NULL	16777215	NULL	
+addresses	address_line2	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+addresses	city	varchar	varchar(100)	YES	NULL	100	NULL	
+addresses	region	varchar	varchar(100)	NO	NULL	100	NULL	
+addresses	phone	varchar	varchar(20)	YES	NULL	20	NULL	
+addresses	is_default	tinyint	tinyint(1)	YES	0	NULL	NULL	
+addresses	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+categories	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+categories	name	varchar	varchar(100)	NO	NULL	100	NULL	
+categories	slug	varchar	varchar(120)	NO	NULL	120	UNIQUE	
+categories	parent_id	int	int(11)	YES	NULL	NULL	FOREIGN KEY	
+categories	image	varchar	varchar(255)	YES	NULL	255	NULL	
+categories	icon	varchar	varchar(100)	YES	NULL	100	NULL	
+categories	description	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+categories	is_active	tinyint	tinyint(1)	YES	1	NULL	NULL	
+categories	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+categories_backup	id	int	int(11)	NO	0	NULL	NULL	
+categories_backup	name	varchar	varchar(100)	NO	NULL	100	NULL	
+categories_backup	slug	varchar	varchar(120)	NO	NULL	120	NULL	
+categories_backup	parent_id	int	int(11)	YES	NULL	NULL	NULL	
+categories_backup	image	varchar	varchar(255)	YES	NULL	255	NULL	
+categories_backup	icon	varchar	varchar(100)	YES	NULL	100	NULL	
+categories_backup	description	text	text	YES	NULL	65535	NULL	
+categories_backup	is_active	tinyint	tinyint(1)	YES	1	NULL	NULL	
+categories_backup	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+deliverers	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+deliverers	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+deliverers	vehicle_type	varchar	varchar(50)	YES	NULL	50	NULL	
+deliverers	license_number	varchar	varchar(50)	YES	NULL	50	NULL	
+deliverers	availability_status	enum	enum('available','busy','offline')	NO	'offline'	9	NULL	
+deliverers	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+deliveries	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+deliveries	order_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+deliveries	address_id	int	int(11)	YES	NULL	NULL	FOREIGN KEY	
+deliveries	delivery_type	enum	enum('delivery','pickup')	NO	NULL	8	NULL	
+deliveries	delivery_partner	varchar	varchar(100)	YES	NULL	100	NULL	
+deliveries	tracking_ref	varchar	varchar(100)	YES	NULL	100	NULL	
+deliveries	rider_phone	varchar	varchar(20)	YES	NULL	20	NULL	
+deliveries	estimated_delivery_date	date	date	YES	NULL	NULL	NULL	
+deliveries	actual_delivery_date	date	date	YES	NULL	NULL	NULL	
+deliveries	status	enum	enum('pending','assigned','in_transit','delivered'...	YES	'pending'	10	NULL	
+deliveries	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+login_attempts	id	int	int(10) unsigned	NO	NULL	NULL	PRIMARY KEY	
+login_attempts	identifier	varchar	varchar(255)	NO	NULL	255	NULL	
+login_attempts	user_id	int	int(10) unsigned	YES	NULL	NULL	NULL	
+login_attempts	status	enum	enum('success','failed')	NO	'failed'	7	NULL	
+login_attempts	ip_address	varchar	varchar(45)	NO	NULL	45	NULL	
+login_attempts	attempted_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+orders	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+orders	order_number	varchar	varchar(50)	NO	NULL	50	UNIQUE	
+orders	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+orders	vendor_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+orders	subtotal	decimal	decimal(12,2)	NO	NULL	NULL	NULL	
+orders	delivery_fee	decimal	decimal(10,2)	YES	0.00	NULL	NULL	
+orders	discount_amount	decimal	decimal(10,2)	YES	0.00	NULL	NULL	
+orders	total_amount	decimal	decimal(12,2)	NO	NULL	NULL	NULL	
+orders	order_status	enum	enum('pending','confirmed','processing','packed','...	YES	'pending'	10	NULL	
+orders	payment_status	enum	enum('unpaid','paid','partially_paid','refunded')	YES	'unpaid'	14	NULL	
+orders	payment_method	enum	enum('momo','card','cash_on_delivery','bank_transf...	NO	NULL	16	NULL	
+orders	delivery_type	enum	enum('delivery','pickup')	NO	'delivery'	8	NULL	
+orders	notes	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+orders	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+orders	updated_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+order_addresses	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+order_addresses	order_id	int	int(11)	NO	NULL	NULL	UNIQUE	
+order_addresses	order_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+order_addresses	address_line1	text	text	NO	NULL	65535	NULL	
+order_addresses	address_line2	text	text	YES	NULL	65535	NULL	
+order_addresses	city	varchar	varchar(100)	YES	NULL	100	NULL	
+order_addresses	region	varchar	varchar(100)	NO	NULL	100	NULL	
+order_addresses	phone	varchar	varchar(20)	YES	NULL	20	NULL	
+order_addresses	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+order_courier_assignments	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+order_courier_assignments	order_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+order_courier_assignments	courier_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+order_courier_assignments	assigned_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+order_courier_assignments	status	enum	enum('assigned','accepted','picked_up','in_transit...	YES	'assigned'	10	NULL	
+order_courier_assignments	notes	text	text	YES	NULL	65535	NULL	
+order_items	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+order_items	order_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+order_items	product_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+order_items	pricing_tier_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+order_items	quantity	int	int(11)	NO	NULL	NULL	NULL	
+order_items	unit_price	decimal	decimal(10,2)	NO	NULL	NULL	NULL	
+order_items	subtotal	decimal	decimal(12,2)	NO	NULL	NULL	NULL	
+order_status_history	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+order_status_history	order_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+order_status_history	old_status	varchar	varchar(50)	YES	NULL	50	NULL	
+order_status_history	new_status	varchar	varchar(50)	NO	NULL	50	NULL	
+order_status_history	changed_by	int	int(11)	YES	NULL	NULL	NULL	
+order_status_history	notes	text	text	YES	NULL	65535	NULL	
+order_status_history	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+password_resets	id	int	int(10) unsigned	NO	NULL	NULL	PRIMARY KEY	
+password_resets	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+password_resets	token_hash	varchar	varchar(64)	NO	NULL	64	NULL	
+password_resets	expires_at	datetime	datetime	NO	NULL	NULL	NULL	
+password_resets	used	tinyint	tinyint(1)	YES	0	NULL	NULL	
+password_resets	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+payments	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+payments	order_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+payments	amount	decimal	decimal(12,2)	NO	NULL	NULL	NULL	
+payments	payment_method	enum	enum('momo','card','cash_on_delivery','bank_transf...	NO	NULL	16	NULL	
+payments	transaction_id	varchar	varchar(100)	YES	NULL	100	NULL	
+payments	status	enum	enum('pending','successful','failed','refunded')	YES	'pending'	10	NULL	
+payments	paid_at	timestamp	timestamp	YES	NULL	NULL	NULL	
+payments	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+products	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+products	vendor_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+products	category_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+products	name	varchar	varchar(255)	NO	NULL	255	NULL	
+products	slug	varchar	varchar(255)	NO	NULL	255	UNIQUE	
+products	short_description	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+products	full_description	longtext	longtext	YES	NULL	4294967295	NULL	
+products	sku	varchar	varchar(50)	YES	NULL	50	UNIQUE	
+products	brand	varchar	varchar(100)	YES	NULL	100	NULL	
+products	weight	decimal	decimal(10,2)	YES	NULL	NULL	NULL	
+products	dimensions	varchar	varchar(100)	YES	NULL	100	NULL	
+products	is_active	tinyint	tinyint(1)	YES	1	NULL	NULL	
+products	featured	tinyint	tinyint(1)	YES	0	NULL	NULL	
+products	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+products	updated_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+product_images	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+product_images	product_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+product_images	image_path	varchar	varchar(255)	YES	NULL	255	NULL	
+product_images	image_type	enum	enum('primary','secondary')	YES	NULL	9	NULL	
+product_images	is_primary	tinyint	tinyint(1)	YES	0	NULL	NULL	
+product_images	sort_order	int	int(11)	YES	0	NULL	NULL	
+product_images	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+product_inventory	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+product_inventory	pricing_tier_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+product_inventory	stock_quantity	int	int(11)	NO	0	NULL	NULL	
+product_inventory	reserved_quantity	int	int(11)	NO	0	NULL	NULL	
+product_inventory	low_stock_threshold	int	int(11)	YES	10	NULL	NULL	
+product_inventory	last_updated	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+product_pricing_tiers	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+product_pricing_tiers	product_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+product_pricing_tiers	product_variant_id	int	int(11)	YES	NULL	NULL	FOREIGN KEY	
+product_pricing_tiers	pricing_type	enum	enum('retail','wholesale')	NO	NULL	9	NULL	
+product_pricing_tiers	tier_name	varchar	varchar(100)	NO	NULL	100	NULL	
+product_pricing_tiers	min_quantity	int	int(11)	NO	1	NULL	NULL	
+product_pricing_tiers	max_quantity	int	int(11)	YES	NULL	NULL	NULL	
+product_pricing_tiers	unit_price	decimal	decimal(10,2)	NO	NULL	NULL	NULL	
+product_pricing_tiers	discount_price	decimal	decimal(10,2)	YES	NULL	NULL	NULL	
+product_pricing_tiers	discount_percentage	decimal	decimal(5,2)	YES	NULL	NULL	NULL	
+product_pricing_tiers	is_active	tinyint	tinyint(1)	YES	1	NULL	NULL	
+product_pricing_tiers	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+product_pricing_tiers	updated_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+product_promotions	product_id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+product_promotions	product_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+product_promotions	promotion_id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+product_promotions	promotion_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+product_variants	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+product_variants	product_id	int	int(11)	NO	NULL	NULL	UNIQUE	
+product_variants	product_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+product_variants	variant_name	varchar	varchar(100)	NO	NULL	100	UNIQUE	
+product_variants	variant_value	varchar	varchar(100)	NO	NULL	100	UNIQUE	
+product_variants	sku_suffix	varchar	varchar(50)	YES	NULL	50	NULL	
+product_variants	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+promotions	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+promotions	name	varchar	varchar(150)	NO	NULL	150	NULL	
+promotions	description	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+promotions	discount_type	enum	enum('percentage','fixed')	NO	NULL	10	NULL	
+promotions	discount_value	decimal	decimal(10,2)	NO	NULL	NULL	NULL	
+promotions	start_date	date	date	NO	NULL	NULL	NULL	
+promotions	end_date	date	date	NO	NULL	NULL	NULL	
+promotions	is_active	tinyint	tinyint(1)	YES	1	NULL	NULL	
+promotions	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+remember_tokens	id	int	int(10) unsigned	NO	NULL	NULL	PRIMARY KEY	
+remember_tokens	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+remember_tokens	token_hash	varchar	varchar(64)	NO	NULL	64	NULL	
+remember_tokens	expires_at	datetime	datetime	NO	NULL	NULL	NULL	
+remember_tokens	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+reviews	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+reviews	product_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+reviews	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+reviews	rating	tinyint	tinyint(4)	NO	NULL	NULL	NULL	
+reviews	comment	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+reviews	is_approved	tinyint	tinyint(1)	YES	1	NULL	NULL	
+reviews	moderated_at	timestamp	timestamp	YES	NULL	NULL	NULL	
+reviews	helpful_count	int	int(11)	YES	0	NULL	NULL	
+reviews	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+roles	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+roles	role_name	enum	enum('admin','seller','buyer','deliverer')	NO	NULL	9	NULL	
+roles	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+settings	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+settings	setting_key	varchar	varchar(100)	NO	NULL	100	UNIQUE	
+settings	setting_value	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+settings	description	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+settings	updated_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+sms_notifications	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+sms_notifications	user_id	int	int(11)	YES	NULL	NULL	NULL	
+sms_notifications	phone	varchar	varchar(20)	NO	NULL	20	NULL	
+sms_notifications	message	text	text	NO	NULL	65535	NULL	
+sms_notifications	status	enum	enum('sent','failed','queued')	YES	'queued'	6	NULL	
+sms_notifications	sent_at	timestamp	timestamp	YES	NULL	NULL	NULL	
+sms_notifications	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+users	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+users	role_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+users	name	varchar	varchar(150)	NO	NULL	150	NULL	
+users	email	varchar	varchar(150)	YES	NULL	150	UNIQUE	
+users	phone	varchar	varchar(20)	NO	NULL	20	UNIQUE	
+users	account_type	enum	enum('regular','premium')	YES	'regular'	7	NULL	
+users	is_guest	tinyint	tinyint(1)	YES	0	NULL	NULL	
+users	password	varchar	varchar(255)	NO	NULL	255	NULL	
+users	is_active	tinyint	tinyint(1)	YES	1	NULL	NULL	
+users	last_login	timestamp	timestamp	YES	NULL	NULL	NULL	
+users	email_verified_at	timestamp	timestamp	YES	NULL	NULL	NULL	
+users	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+users	updated_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+users	deleted_at	timestamp	timestamp	YES	NULL	NULL	NULL	
+vendors	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+vendors	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+vendors	business_name	varchar	varchar(200)	NO	'Bless Mall'	200	NULL	
+vendors	logo	varchar	varchar(255)	YES	NULL	255	NULL	
+vendors	banner	varchar	varchar(255)	YES	NULL	255	NULL	
+vendors	description	mediumtext	mediumtext	YES	NULL	16777215	NULL	
+vendors	contact_phone	varchar	varchar(20)	YES	NULL	20	NULL	
+vendors	whatsapp	varchar	varchar(20)	YES	NULL	20	NULL	
+vendors	rating	decimal	decimal(3,2)	YES	0.00	NULL	NULL	
+vendors	is_approved	tinyint	tinyint(1)	YES	1	NULL	NULL	
+vendors	status	enum	enum('active','inactive','suspended')	YES	'active'	9	NULL	
+vendors	is_express	tinyint	tinyint(1)	YES	0	NULL	NULL	
+vendors	store_badge	varchar	varchar(50)	YES	NULL	50	NULL	
+vendors	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+vendors	updated_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+wishlist	id	int	int(11)	NO	NULL	NULL	PRIMARY KEY	
+wishlist	user_id	int	int(11)	NO	NULL	NULL	UNIQUE	
+wishlist	user_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+wishlist	product_id	int	int(11)	NO	NULL	NULL	UNIQUE	
+wishlist	product_id	int	int(11)	NO	NULL	NULL	FOREIGN KEY	
+wishlist	created_at	timestamp	timestamp	YES	current_timestamp()	NULL	NULL	
+
+
+blessmall/
+├── assets/
+│   ├── images/
+│   │   ├── logo.jpeg              ← Your Bless Mall logo
+│   │   ├── banners/           ← Hero banners, promo banners
+│   │   ├── products/          ← Product images uploaded by admin
+│   │   └── placeholders/      ← Default placeholder images
+│   └── uploads/
+│       └── products/          ← Web-accessible folder for uploaded product photos
+│
+├── admin/                     ← Admin Panel (Owner)
+│   ├── index.php
+│   ├── products.php
+│   ├── categories.php
+│   ├── orders.php
+│   ├── inventory.php
+│   ├── users.php
+│   └── settings.php
+│   ├── footer.php
+│   └── header.php
+├── delivery/                       ← delivery portal
+│   ├── index.php
+│   ├── 
+│   └── 
+├── vendor/                    ← Future sellers (will be used later)
+│   └── index.php
+│
+├── includes/                  ← Shared files
+│   ├── config.php
+│   ├── functions.php
+│   ├── auth.php
+│
+├── login.php                  ← Login page (root)
+├── register.php               ← Signup page (root)
+├── index.php                  ← Homepage (Guest)
+├── shop.php                   ← All products
+├── category.php
+├── product-detail.php
+├── cart.php
+├── express.php
+├── account.php                ← Buyer dashboard
+├── orders.php
+├── addresses.php
+├── wishlist.php
+├── track-order.php
+├── footer.php
+├── header.php
+│
+├── uploads/
+│   └── products/
+│
+└── README.md
+
+this is my db and my dir, i need you to look at the attached files and give me a perfect and well made .php
+initially we were adding api as a seperate folder but now we are removing it to include it and embed it in all files
+├── api/                       ← AJAX endpoints
+│   ├── add-to-cart.php
+│   ├── update-cart.php
+│   └── remove-from-cart.php
+
+so lets work hard and perfectly.
+these are the paystack payments api, i will change the code once i know the test works
+so with this if i need to create another file let me know and what its for and when i understand we create it
+API Configuration - Test Mode
+These keys are for testing only. Please DO NOT use them in production.
+
+Test Secret Key
+sk_test_93a367e490b75ecd3b9b685b3f2881de2011e265
+Generate new secret key
+
+
+IP Whitelist
+Add IP addresses
+Test Public Key
+pk_test_b4b3b976e0ed036ab23e444fcb202b23d38f1411
+Test Callback URL
+https://example.com
+Test Webhook URL
+https://example.com
